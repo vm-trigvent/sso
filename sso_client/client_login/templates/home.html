@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSO Client - Home</title>
+</head>
+<body>
+    <h1>Welcome to SSO Client!</h1>
+    
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}! You are logged in via SSO.</p>
+        <p>This is the SSO client application.</p>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+        <p>Please <a href="{% url 'client_login' %}">login</a> to continue.</p>
+    {% endif %}
+</body>
+</html>
